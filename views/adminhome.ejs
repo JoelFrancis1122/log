@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Homepage</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ececec;
+        color: #333;
+      }
+
+      header {
+        background-color: #673ab7;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      nav {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .hero {
+        background-color: #673ab7;
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        background-color: #ff4081;
+        color: #fff;
+      }
+
+      .features {
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      .features h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #ff4081;
+      }
+
+      .feature {
+        margin-bottom: 30px;
+      }
+
+      .feature h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .feature p {
+        color: #555;
+      }
+
+      .pricing {
+        background-color: #fff;
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .pricing h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #ff4081;
+      }
+
+      .pricing-plan {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-plan h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .price {
+        display: block;
+        font-size: 20px;
+        color: #ff4081;
+        margin-bottom: 15px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #673ab7;
+        color: #fff;
+      }
+      
+
+
+      :root {
+    --bg: #1a1e24;
+    --color: #eee;
+    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+    padding: 1.5rem 0;
+    filter: url('#goo');
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    background: var(--color);
+    color: var(--bg);
+    font-weight: bold;
+    padding: 1.18em 1.32em 1.03em;
+    line-height: 1;
+    border-radius: 1em;
+    position: relative;
+    min-width: 8.23em;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 1.25rem;
+}
+
+.button:before,
+.button:after {
+    width: 4.4em;
+    height: 2.95em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background: var(--color);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+}
+
+.button:before {
+    top: -25%;
+    left: 20%;
+}
+
+.button:after {
+    bottom: -25%;
+    right: 20%;
+}
+
+.button:hover:before,
+.button:hover:after {
+    transform: none;
+}
+.btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative; 
+}
+.btn-two span {
+  z-index: 2; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+.btn-two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      
+      </nav>
+
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome Admin</h1>
+        <p>on a journey of discovery with our amazing features.</p>
+        <!-- <a href="/adminhome/dashboard" class="btn">Move to dashboard</a> -->
+
+        <div class="box-2">
+          <div class="btn btn-two">
+           <a href="/adminhome/dashboard" style="text-decoration: none; color: #FFF;"> Move to Dashboard</a>
+          </div>
+        </div>
+
+        <div class="wrapper">
+          <a class="button" href="/logout">Logout</a>
+      </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <p>&copy; 2023 Amazing Services. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
