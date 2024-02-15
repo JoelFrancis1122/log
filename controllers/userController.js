@@ -152,6 +152,7 @@ const logoutuser = (req, res) => {
 
 
 
+
 const viewprofile = async function (req, res) {
   try {
     if (req.session.user) {

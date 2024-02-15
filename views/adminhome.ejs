@@ -133,109 +133,106 @@
         background-color: #673ab7;
         color: #fff;
       }
-      
-
 
       :root {
-    --bg: #1a1e24;
-    --color: #eee;
-    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
-}
+        --bg: #1a1e24;
+        --color: #eee;
+        --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+      }
 
-.wrapper {
-    padding: 1.5rem 0;
-    filter: url('#goo');
-}
+      .wrapper {
+        padding: 1.5rem 0;
+        filter: url("#goo");
+      }
 
-.button {
-    display: inline-block;
-    text-align: center;
-    background: var(--color);
-    color: var(--bg);
-    font-weight: bold;
-    padding: 1.18em 1.32em 1.03em;
-    line-height: 1;
-    border-radius: 1em;
-    position: relative;
-    min-width: 8.23em;
-    text-decoration: none;
-    font-family: var(--font);
-    font-size: 1.25rem;
-}
+      .button {
+        display: inline-block;
+        text-align: center;
+        background: var(--color);
+        color: var(--bg);
+        font-weight: bold;
+        padding: 1.18em 1.32em 1.03em;
+        line-height: 1;
+        border-radius: 1em;
+        position: relative;
+        min-width: 8.23em;
+        text-decoration: none;
+        font-family: var(--font);
+        font-size: 1.25rem;
+      }
 
-.button:before,
-.button:after {
-    width: 4.4em;
-    height: 2.95em;
-    position: absolute;
-    content: "";
-    display: inline-block;
-    background: var(--color);
-    border-radius: 50%;
-    transition: transform 1s ease;
-    transform: scale(0);
-    z-index: -1;
-}
+      .button:before,
+      .button:after {
+        width: 4.4em;
+        height: 2.95em;
+        position: absolute;
+        content: "";
+        display: inline-block;
+        background: var(--color);
+        border-radius: 50%;
+        transition: transform 1s ease;
+        transform: scale(0);
+        z-index: -1;
+      }
 
-.button:before {
-    top: -25%;
-    left: 20%;
-}
+      .button:before {
+        top: -25%;
+        left: 20%;
+      }
 
-.button:after {
-    bottom: -25%;
-    right: 20%;
-}
+      .button:after {
+        bottom: -25%;
+        right: 20%;
+      }
 
-.button:hover:before,
-.button:hover:after {
-    transform: none;
-}
-.btn-two {
-  color: #FFF;
-  transition: all 0.5s;
-  position: relative; 
-}
-.btn-two span {
-  z-index: 2; 
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%; 
-}
-.btn-two::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two:hover::before {
-  transform: rotate(-45deg);
-  background-color: rgba(255,255,255,0);
-}
-.btn-two:hover::after {
-  transform: rotate(45deg);
-  background-color: rgba(255,255,255,0);
-}
-
+      .button:hover:before,
+      .button:hover:after {
+        transform: none;
+      }
+      .btn-two {
+        color: #fff;
+        transition: all 0.5s;
+        position: relative;
+      }
+      .btn-two span {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .btn-two::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .btn-two::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .btn-two:hover::before {
+        transform: rotate(-45deg);
+        background-color: rgba(255, 255, 255, 0);
+      }
+      .btn-two:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(255, 255, 255, 0);
+      }
     </style>
   </head>
   <body>
@@ -247,9 +244,7 @@
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
-      
       </nav>
-
     </header>
 
     <section class="hero">
@@ -260,16 +255,20 @@
 
         <div class="box-2">
           <div class="btn btn-two">
-           <a href="/adminhome/dashboard" style="text-decoration: none; color: #FFF;"> Move to Dashboard</a>
+            <a
+              href="/adminhome/dashboard"
+              style="text-decoration: none; color: #fff"
+            >
+              Move to Dashboard</a
+            >
           </div>
         </div>
 
         <div class="wrapper">
           <a class="button" href="/logout">Logout</a>
-      </div>
+        </div>
       </div>
     </section>
-
 
     <footer>
       <p>&copy; 2023 Amazing Services. All rights reserved.</p>

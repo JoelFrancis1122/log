@@ -1,154 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create User</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
     <style>
-        body {
-            font-family: 'Arial, sans-serif';
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #f8f9fa; /* Fallback color */
-            background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
-        }
+      body {
+        font-family: "Arial, sans-serif";
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #f8f9fa; /* Fallback color */
+        background: linear-gradient(
+          to right,
+          #e0eafc,
+          #cfdef3
+        ); /* Gradient background */
+      }
 
-        .vh-100 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      .vh-100 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-        .card {
-            border: none;
-            border-radius: 1rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-            background: #ffffff; /* White background */
-            width: 80%;
-            max-width: 600px;
-        }
+      .card {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        background: #ffffff; /* White background */
+        width: 80%;
+        max-width: 600px;
+      }
 
-        .card-body {
-            padding: 3rem;
-        }
+      .card-body {
+        padding: 3rem;
+      }
 
-        .card-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #3498db;
-        }
+      .card-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #3498db;
+      }
 
-        .form-outline {
-            margin-bottom: 1.5rem;
-        }
+      .form-outline {
+        margin-bottom: 1.5rem;
+      }
 
-        .form-outline label {
-            color: #495057;
-        }
+      .form-outline label {
+        color: #495057;
+      }
 
-        .btn-create {
-            background-color: #4CAF50; /* Green color */
-            color: #fff;
-        }
+      .btn-create {
+        background-color: #4caf50; /* Green color */
+        color: #fff;
+      }
 
-        .btn-create:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
+      .btn-create:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
 
-        .btn-logout {
-            background-color: #6c757d; /* Gray color */
-            color: #fff;
-        }
+      .btn-logout {
+        background-color: #6c757d; /* Gray color */
+        color: #fff;
+      }
 
-        .btn-logout:hover {
-            background-color: #495057; /* Darker gray on hover */
-        }
+      .btn-logout:hover {
+        background-color: #495057; /* Darker gray on hover */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <section class="vh-100">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title fw-bold mb-2 text-uppercase">Create User</h2>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title fw-bold mb-2 text-uppercase">Create User</h2>
 
-                <form action="/adminhome/createuser" method="post" onsubmit="return validateForm()">
-                    <div class="form-outline form-white mb-3">
-                        <label class="form-label" for="typeNameX">Name</label>
-                        <input type="text" id="typeNameX" class="form-control form-control-lg" name="name" required />
-                    </div>
-                
-                    <div class="form-outline form-white mb-3">
-                        <label class="form-label" for="typeEmailX">Email</label>
-                        <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email" required />
-                    </div>
-                
-                    <div class="form-outline form-white mb-3">
-                        <label class="form-label" for="typeMobileX">Mobile</label>
-                        <input type="tel" maxlength="10" id="typeMobileX" class="form-control form-control-lg" name="mobile" required />
-                    </div>
-                
-                    <div class="form-outline form-white mb-3">
-                        <label class="form-label" for="typePasswordX">Password</label>
-                        <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" required />
-                    </div>
-                
-                    <input class="btn btn-outline-info btn-lg px-5 mb-3" type="submit" value="Create" />
-          <h3 class="text-center text-primary" id="registerErrorMessage"><%=locals.message ? message : ''%></h3>
-
-                </form>
-                
-                <h2>
-                    <a href="/logout"><button type="button" class="btn btn-outline-light btn-lg px-5 btn-logout">
-                        Logout
-                    </button></a>
-                </h2>
+          <form
+            action="/adminhome/createuser"
+            method="post"
+            onsubmit="return validateForm()"
+          >
+            <div class="form-outline form-white mb-3">
+              <label class="form-label" for="typeNameX">Name</label>
+              <input
+                type="text"
+                id="typeNameX"
+                class="form-control form-control-lg"
+                name="name"
+                required
+              />
             </div>
+
+            <div class="form-outline form-white mb-3">
+              <label class="form-label" for="typeEmailX">Email</label>
+              <input
+                type="email"
+                id="typeEmailX"
+                class="form-control form-control-lg"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="form-outline form-white mb-3">
+              <label class="form-label" for="typeMobileX">Mobile</label>
+              <input
+                type="tel"
+                maxlength="10"
+                id="typeMobileX"
+                class="form-control form-control-lg"
+                name="mobile"
+                required
+              />
+            </div>
+
+            <div class="form-outline form-white mb-3">
+              <label class="form-label" for="typePasswordX">Password</label>
+              <input
+                type="password"
+                id="typePasswordX"
+                class="form-control form-control-lg"
+                name="password"
+                required
+              />
+            </div>
+
+            <input
+              class="btn btn-outline-info btn-lg px-5 mb-3"
+              type="submit"
+              value="Create"
+            />
+            <h3 class="text-center text-primary" id="registerErrorMessage">
+              <%=locals.message ? message : ''%>
+            </h3>
+          </form>
+
+          <h2>
+            <a href="/logout"
+              ><button
+                type="button"
+                class="btn btn-outline-light btn-lg px-5 btn-logout"
+              >
+                Logout
+              </button></a
+            >
+          </h2>
         </div>
+      </div>
     </section>
 
     <script>
-        function validateForm() {
-            // Validate each field
-            if (!validateField('typeNameX', 'Name') ||
-                !validateField('typeEmailX', 'Email') ||
-                !validateField('typeMobileX', 'Mobile') ||
-                !validatePassword()) {
-                return false; // Prevent form submission if any validation fails
-            }
-    
-            return true; // Proceed with form submission if all validations pass
+      function validateForm() {
+        // Validate each field
+        if (
+          !validateField("typeNameX", "Name") ||
+          !validateField("typeEmailX", "Email") ||
+          !validateField("typeMobileX", "Mobile") ||
+          !validatePassword()
+        ) {
+          return false; // Prevent form submission if any validation fails
         }
-    
-        function validateField(fieldId, fieldName) {
-            const fieldValue = document.getElementById(fieldId).value;
-            if (fieldValue.trim() === '') {
-                alert(fieldName + ' is required.');
-                return false;
-            }
-            return true;
-        }
-    
-        function validatePassword() {
-            const passwordInput = document.getElementById('typePasswordX');
-            const passwordValue = passwordInput.value;
-    
-            // Check if the password contains any spaces
-            if (/\s/.test(passwordValue)) {
-                alert('Password should not contain spaces.');
-                return false;
-            }
-    
-            return true;
-        }
-    </script>
-x    
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
+        return true; // Proceed with form submission if all validations pass
+      }
+
+      function validateField(fieldId, fieldName) {
+        const fieldValue = document.getElementById(fieldId).value;
+        if (fieldValue.trim() === "") {
+          alert(fieldName + " is required.");
+          return false;
+        }
+        return true;
+      }
+
+      function validatePassword() {
+        const passwordInput = document.getElementById("typePasswordX");
+        const passwordValue = passwordInput.value;
+
+        // Check if the password contains any spaces
+        if (/\s/.test(passwordValue)) {
+          alert("Password should not contain spaces.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+    x
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
